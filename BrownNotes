@@ -1,0 +1,70 @@
+In the terminal 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+go to commands type cmd .exe    you will be on (Base)
+then type       conda activate C:\Users\hurrd\.conda\envs\sorting       to get to (sorting) 
+the environent should active 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+If you want to write in python, activate by typing 'python'
+write 'exit()' to go back to path writing 
+
+calling function individally 
+first, in terminal, get in 'python mode' and use 'from {class} import {the defined function name} 
+use cammas to call many
+migth need to call the function in the code then run the do the from import thing 
+
+Insertion Sort 
+
+Outer Loop (for i in range(1, len(items))):
+
+This loop iterates over the list starting from the second element (index 1) to the end.
+The variable i is the current index of the element being inserted into the sorted part of the list.
+Key Element (key = items[i]):
+
+The variable key holds the value of the element currently being considered for insertion into the sorted part of the list.
+Initially, key is set to items[i].
+Inner Loop (while j >= 0 and key < items[j]):
+
+This loop is responsible for finding the correct position for the key in the sorted part of the list.
+The variable j starts at i - 1, which is the index of the last element in the sorted part of the list.
+The condition j >= 0 and key < items[j] ensures that we continue moving elements until we find the correct position for key or reach the beginning of the list.
+Shifting Elements (items[j + 1] = items[j]):
+
+Within the inner loop, elements that are greater than key are moved one position to the right to make space for the key.
+items[j + 1] = items[j] shifts the element at index j to index j + 1.
+Decrement j (j -= 1):
+
+After shifting an element, j is decremented by 1 to continue checking the previous elements in the sorted part of the list.
+Insert Key (items[j + 1] = key):
+
+Once the correct position for key is found (when j is no longer greater than or equal to 0 or key is no longer less than items[j]), key is inserted into its correct position in the list.
+This is done by setting items[j + 1] = key.
+
+Ex.
+Initial List: [2, 6, 2, 5]
+
+First Iteration (i = 1, key = 6):
+
+key is 6, j is 0.
+Since 6 is not less than 2 (items[0]), the inner loop does not execute.
+List remains [2, 6, 2, 5].
+Second Iteration (i = 2, key = 2):
+
+key is 2, j is 1.
+Since 2 is less than 6 (items[1]), shift 6 to the right.
+List becomes [2, 6, 6, 5].
+Decrement j to 0. Since 2 is not less than 2 (items[0]), the inner loop stops.
+Insert key into position j + 1 (index 1).
+List becomes [2, 2, 6, 5].
+Third Iteration (i = 3, key = 5):
+
+key is 5, j is 2.
+Since 5 is less than 6 (items[2]), shift 6 to the right.
+List becomes [2, 2, 6, 6].
+Decrement j to 1. Since 5 is not less than 2 (items[1]), the inner loop stops.
+Insert key into position j + 1 (index 2).
+List becomes [2, 2, 5, 6].
+Final Sorted List: [2, 2, 5, 6]
